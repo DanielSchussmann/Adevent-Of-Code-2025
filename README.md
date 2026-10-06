@@ -1,0 +1,1 @@
+ just put in the day you want to run in main and let it riide :) 
