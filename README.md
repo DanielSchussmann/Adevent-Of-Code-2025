@@ -1,1 +1,1 @@
- just put in the day you want to run in main and let it riide :) 
+$pwepawpekd2-19j 9929 21edada d 
