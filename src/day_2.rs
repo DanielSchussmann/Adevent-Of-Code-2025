@@ -38,14 +38,14 @@ fn d_2_part_2(verbose:bool) -> i128 {
     let mut score:i128=0;
     let samples = d_2_data();
 
-    'p2l1:for sample in samples {
+    for sample in samples {
         let re = Regex::new(r"^(.*?)(-)(.*)$").unwrap();
         let lower_bound: i128 = re.captures(&sample).unwrap().get(1).unwrap().as_str().parse().unwrap();
         let upper_bound: i128= re.captures(&sample).unwrap().get(3).unwrap().as_str().parse().unwrap();
 
         'p2l2:for val in lower_bound..upper_bound + 1 {
             let val_s = val.to_string();
-            'p2l3:for segment_size in 1..val_s.len()/2+1 {
+            for segment_size in 1..val_s.len()/2+1 {
                 let segment:Vec<String> = val_s.chars()
                     .collect::<Vec<_>>()
                     .chunks(segment_size)
