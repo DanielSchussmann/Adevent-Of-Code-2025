@@ -1,7 +1,7 @@
 
 
 pub fn day_1(part:i32,verbose:bool ) -> String {
-    let mut output:String;
+    let  output:String;
     match part{
         1 => output = format!("{}",part_1(verbose).yellow().bold()),
         2 => output = format!("{}",part_2(verbose).yellow().bold()),
@@ -14,13 +14,13 @@ pub fn day_1(part:i32,verbose:bool ) -> String {
     return output;
 }
 fn part_1(verbose:bool) -> String {
-    let mut input:Vec<String> =  DATA.iter().map(|s| s.to_string()).collect();
+    let  input:Vec<String> =  DATA.iter().map(|s| s.to_string()).collect();
     let mut current_dial_rotation:i32 = 50;
     let mut zero_counter:i32 = 0;
 
     'part1loop:for inst in input.iter() {
-        let mut dir = inst.as_bytes()[0] as char;
-        let mut distance:i32;
+        let  dir = inst.as_bytes()[0] as char;
+        let  distance:i32;
 
         if inst[1..].parse::<i32>().unwrap()  > 100{
             distance = inst[inst.len()-2..].parse::<i32>().unwrap() ;
@@ -62,17 +62,17 @@ fn part_1(verbose:bool) -> String {
     return zero_counter.to_string();
 }
 fn part_2(verbose:bool) -> String {
-    let mut input:Vec<String> =  DATA.iter().map(|s| s.to_string()).collect();
+    let  input:Vec<String> =  DATA.iter().map(|s| s.to_string()).collect();
     let mut current_dial_rotation:i32 = 50;
     let mut zero_counter:i32 = 0;
 
     'part2loop:for inst in input.iter() {
-        let mut dir = inst.as_bytes()[0] as char;
-        let mut distance:i32;
+        let  dir = inst.as_bytes()[0] as char;
+        let  distance:i32;
 
         if inst[1..].parse::<i32>().unwrap()  > 100{ 
             distance = inst[inst.len()-2..].parse::<i32>().unwrap() ;
-            let mut overflow = &inst[1..2].parse::<i32>().unwrap();
+            let  overflow = &inst[1..2].parse::<i32>().unwrap();
             zero_counter = zero_counter + overflow;
         }
         else{  distance = inst[1..].parse::<i32>().unwrap() ;}
